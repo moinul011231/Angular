@@ -1,0 +1,10 @@
+<p>parent works!</p>
+<app-child 
+*ngFor="let item of villians"
+    [villian] = "item"
+    [heroName] = "hero"
+    (killVillian)="Moinulkilled($event)">
+    
+
+</app-child>
+{{MoinulKills}}
