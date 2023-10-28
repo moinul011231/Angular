@@ -54,3 +54,4 @@ void {
         _this.students = _this.students.filter(function (student) { return student != stud; });
     })
 };
+searchStudent;

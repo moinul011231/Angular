@@ -18,6 +18,7 @@ var routes = [
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
     { path: 'parent', component: parent_component_1.ParentComponent },
     { path: 'details/:id', component: students_details_student_details_component_1.StudentsDetailsComponent },
+    { path: 'banner', component: AddBannerComponent },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

@@ -38,7 +38,9 @@ export class DashboardComponent implements OnInit {
         this.students  = this.students.filter((student) => student!= stud);
 
   })
-  };
+  }
+
+  searchStudent
 
 
 }
