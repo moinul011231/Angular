@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../_models/student';
-import { StudentService } from '../_service/student.service';
+import { StudentService,removeStudents } from '../_service/student.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,11 +19,26 @@ export class DashboardComponent implements OnInit {
     }})
   }
 
-  addStudent(name: string): void{
-
+  navigateStudent(id: number){
+    this.studentService.getStudentById(id).subscribe({next (res) => {
+      if(res){
+        console.log(res);
+      }
+      else{
+        console.log("There is no student found");
+      }
+    }});
   }
+  // addStudent(name: string): void{
 
-  removeStudents(student: Student): void{}
+  // };
+
+  removeStudents(studentId: Student): void{
+      this.studentService.removeStudentById(studentId.id).subscribe(stud=>{
+        this.students  = this.students.filter((student) => student!= stud);
+
+  })
+  };
 
 
 }

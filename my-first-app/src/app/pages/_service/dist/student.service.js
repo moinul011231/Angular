@@ -23,6 +23,10 @@ var StudentService = /** @class */ (function () {
     StudentService.prototype.getStudents = function () {
         return this.http.get(this.studentsUrl).pipe(operators_1.tap(function (_) { return console.log('Fetched All Students'); }), operators_1.catchError(this.handleErrorResponse('getStudents', [])));
     };
+    StudentService.prototype.getStudentById = function (id) {
+        var url = this.studentsUrl + "?id = " + id;
+        return this.http.get(this.studentsUrl).pipe(operators_1.tap(function (_) { return console.log("Fetched studetn by " + id + " "); }), operators_1.catchError(this.handleErrorResponse("getStudents by " + id)));
+    };
     StudentService.prototype.handleErrorResponse = function (opertaion, result) {
         if (opertaion === void 0) { opertaion = 'operation'; }
         return function (error) {
@@ -30,6 +34,14 @@ var StudentService = /** @class */ (function () {
             console.log(opertaion + " failed: " + error.message);
             return rxjs_1.of(result);
         };
+    };
+    StudentService.prototype.saveStudent = function (studet) {
+        return this.http.post(this.studentsUrl, student, this.httpOptinos).pipe(operators_1.tap(function (newStudent) { return console.log("Add new Student w/id " + newStudent + " "); }));
+        operators_1.catchError(this.handleErrorResponse("Save Student"));
+    };
+    StudentService.prototype.removeStudentById = function (id) {
+        var url = this.studentsUrl + "?id = " + id;
+        return this.http["delete"](this.studentsUrl).pipe(operators_1.tap(function (_) { return console.log("Delete studetn by " + id + " "); }), operators_1.catchError(this.handleErrorResponse("delete students by " + id)));
     };
     StudentService = __decorate([
         core_1.Injectable({

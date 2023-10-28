@@ -8,6 +8,7 @@
   background-color: rgba(244, 173, 182, 0.4);
   }
   input {
+   text-align: center;
   display: block;
    width: 50%;
    margin: 1em 0;

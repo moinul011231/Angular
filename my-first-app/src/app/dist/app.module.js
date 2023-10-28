@@ -20,6 +20,7 @@ var child_component_1 = require("./pages/binding/child/child.component");
 var http_1 = require("@angular/common/http");
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var in_memory_service_1 = require("./pages/_service/in-memory.service");
+var students_details_component_1 = require("./pages/dashboard/students-details/students-details.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -31,7 +32,8 @@ var AppModule = /** @class */ (function () {
                 dashboard_component_1.DashboardComponent,
                 binding_component_1.BindingComponent,
                 parent_component_1.ParentComponent,
-                child_component_1.ChildComponent
+                child_component_1.ChildComponent,
+                students_details_component_1.StudentsDetailsComponent
             ],
             imports: [
                 forms_1.FormsModule,
