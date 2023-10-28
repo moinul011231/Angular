@@ -12,6 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import { InMemoryService } from './pages/_service/in-memory.service';
 import { StudentsDetailsComponent } from './pages/dashboard/students-details/students-details.component';
+import { AddBannerComponent } from './pages/dashboard/add-banner/add-banner.component';
+import { AddBannerDirective } from './pages/dashboard/add-banner.directive';
+import { BannerDirective } from './pages/dashboard/add-banner/banner.directive';
+import { JobOfferComponent } from './pages/dashboard/add-banner/job-offer/job-offer.component';
+import { CourseOfferComponent } from './pages/dashboard/add-banner/course-offer/course-offer.component';
 
 
  
@@ -19,11 +24,16 @@ import { StudentsDetailsComponent } from './pages/dashboard/students-details/stu
   declarations: [
     AppComponent,
     NavComponent,
-    DashboardComponent,  
+    DashboardComponent,
     BindingComponent,
     ParentComponent,
     ChildComponent,
-    StudentsDetailsComponent
+    StudentsDetailsComponent,
+    AddBannerComponent,
+    AddBannerDirective,
+    BannerDirective,
+    JobOfferComponent,
+    CourseOfferComponent
   ],
   imports: [
     FormsModule,

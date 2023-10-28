@@ -1,26 +1,31 @@
-<div class="main-villian">
-    <h2>Students</h2>
-    <div>
-        <label for="new-villian">Villain Name</label>
-        <input type="text" id="new-villian" #studentName />
+<div class="main-villain">
+      <h2>Students</h2>
+      <div>
+        <label for="new-villain">Add Student Name</label>
+        <input type="text" id="new-villain" #studentName/>
         <button
-            type="button"
-            class="add-button"
-            (click)="addStudent(studentName.value); studentName.value = '' "
-        >
-        Add Villain
+          type="button"
+          class="add-button"
+          (click)="addStudent(studentName.value); studentName.value = ''"
+          >
+          Add Villain
         </button>
-    </div>
-    <ul class="villians">
+        <hr>
+      </div>
+      <label for="new-villain">Search Student </label>
+        <input
+        type="text" 
+        id="new-villain" 
+        #searchStudent
+        />
+      
+      <ul class="villains">
         <li *ngFor="let item of students">
-            <a (click)="navigateStudent(item.id)" routerLink="/detail/{{item.id}}">
-                <span class="badge">{{item.id}}</span> {{item.name}}
-            </a>
-            <button type="button" class="delete" title="delete" (click)="removeStudents(item)">x
-            </button>
-            
+          <a routerLink="?detail/{{item.id}}">
+
+            <span class="badge"> {{ item.id }}</span> {{ item.name }}
+          </a>
+          <button type="button" class="delete" title="delete" (click)="removeStudents(item)"> x </button>
         </li>
-
-    </ul>
-
-</div>
+      </ul>
+    </div>
